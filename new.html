@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mason Nguyen's portfolio: Technical SEO, Web3 Digital Strategy, and AI/LLM expertise. Driving growth, ecosystem expansion, and innovative AI solutions.">
+    <meta name="keywords" content="Technical SEO, Web3, Digital Strategy, Organic Growth, Generative Search Optimization, LLM, AI, Prompt Engineering, On-Chain Analytics, Portfolio">
+    <meta name="author" content="Mason Nguyen">
+    <title>Mason Nguyen | Technical SEO & Web3 Digital Strategist</title>
+    <link rel="canonical" href="https://masonnguyen.com">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .kanban-column {
+            min-width: 280px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+        }
+        .project-card {
+            background-color: #2e3a4e;
+            color: #d1d5db;
+            transition: all 0.3s ease-in-out;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+        .details-toggle {
+            cursor: pointer;
+            color: #4b93ff;
+            font-weight: 600;
+            display: block;
+            margin-top: 1rem;
+            text-align: right;
+        }
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+            padding-top: 0.5rem;
+        }
+        .details-content.expanded {
+            max-height: 800px; /* Adjusted max height for expanded content */
+            transition: max-height 0.8s ease-in;
+        }
+        canvas {
+            max-height: 200px;
+        }
+        [role="region"] {
+            margin-top: 1rem;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mason Nguyen",
+        "jobTitle": "Technical SEO & Web3 Digital Strategist",
+        "email": "mailto:masonnguyen138@gmail.com",
+        "url": "https://masonnguyen.com",
+        "sameAs": ["https://linkedin.com/in/mason-nguyen"],
+        "worksFor": [
+            {
+                "@type": "Organization",
+                "name": "Opentensor Foundation"
+            },
+            {
+                "@type": "Organization",
+                "name": "Kilt Protocol"
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <!-- Header -->
+    <header class="bg-blue-900 text-white py-6 sticky top-0 z-50 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-2xl font-bold">Mason Nguyen</h1>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-blue-300 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-300 transition">About</a></li>
+                <li><a href="#experience" class="hover:text-blue-300 transition">Experience</a></li>
+                <li><a href="#case-studies" class="hover:text-blue-300 transition">Case Studies</a></li>
+                <li><a href="#workflows" class="hover:text-blue-300 transition">Workflows</a></li>
+                <li><a href="#technical-seo-fundamentals" class="hover:text-blue-300 transition">SEO Fundamentals</a></li>
+                <li><a href="#seo-geo-insights" class="hover:text-blue-300 transition">SEO vs. GEO</a></li>
+                <li><a href="#thought-leadership" class="hover:text-blue-300 transition">Thought Leadership</a></li>
+                <li><a href="#contact" class="hover:text-blue-300 transition">Contact</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none" aria-label="Toggle mobile menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden bg-blue-800 hidden">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="#home" class="block py-2 hover:bg-blue-700 w-full text-center">Home</a></li>
+                <li><a href="#about" class="block py-2 hover:bg-blue-700 w-full text-center">About</a></li>
+                <li><a href="#experience" class="block py-2 hover:bg-blue-700 w-full text-center">Experience</a></li>
+                <li><a href="#case-studies" class="block py-2 hover:bg-blue-700 w-full text-center">Case Studies</a></li>
+                <li><a href="#workflows" class="block py-2 hover:bg-blue-700 w-full text-center">Workflows</a></li>
+                <li><a href="#technical-seo-fundamentals" class="block py-2 hover:bg-blue-700 w-full text-center">SEO Fundamentals</a></li>
+                <li><a href="#seo-geo-insights" class="block py-2 hover:bg-blue-700 w-full text-center">SEO vs. GEO</a></li>
+                <li><a href="#thought-leadership" class="block py-2 hover:bg-blue-700 w-full text-center">Thought Leadership</a></li>
+                <li><a href="#contact" class="block py-2 hover:bg-blue-700 w-full text-center">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20 md:py-32 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Technical SEO & Web3 Digital Strategist</h2>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Driving organic traffic growth, engagement, and innovative AI/LLM solutions at the intersection of SEO, Web3, and decentralized AI.</p>
+            <a href="#case-studies" class="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-100 transition duration-300 transform hover:scale-105">Explore My Case Studies</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">About Mason</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <div class="md:w-1/2 px-4 mb-8 md:mb-0">
+                    <p class="text-lg leading-relaxed mb-4">With over a decade of progressive experience, I operate as a dynamic Web3 Digital Strategist. My expertise lies in advanced Organic SEO and the forefront of Generative Search Optimization (GSO). My core mission is to act as an instrumental catalyst, propelling significant ecosystem growth and maximizing organic visibility.</p>
+                    <p class="text-lg leading-relaxed">My journey across diverse organizations, from dynamic startups to global enterprises like Opentensor Foundation, Kilt Protocol, and Norvoc Bioscience, has shaped my ability to blend deep technical acumen with strategic partnerships and profound data insights. I possess a proven track record in leading transformations, embedding AI/automation, and shaping operating models through robust technical SEO implementations, cutting-edge LLM/AI content strategies, and precise prompt engineering. I consistently translate complex technical concepts into clear, tangible business value, always maintaining a 'big picture' strategic perspective while also diving into detailed execution.</p>
+                </div>
+                <div class="md:w-1/2 px-4">
+                    <h3 class="text-2xl font-semibold mb-4 text-blue-300">Areas of Expertise</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">SEO & Generative Search</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Technical SEO</li>
+                                <li>Generative Search Optimization</li>
+                                <li>AI-Driven Content</li>
+                                <li>Site Audits</li>
+                                <li>Core Web Vitals</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">AI & Data Analysis</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Prompt Engineering</li>
+                                <li>LLM Customization</li>
+                                <li>AI Automation</li>
+                                <li>On-Chain Analytics</li>
+                                <li>Data Visualization</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">Web3 & Emerging Tech</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Decentralized Systems</li>
+                                <li>Blockchain Services</li>
+                                <li>Ecosystem Growth</li>
+                                <li>Tokenomics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-white">Business & Leadership</h4>
+                            <ul class="list-disc list-inside text-gray-300 space-y-1">
+                                <li>Strategic Planning</li>
+                                <li>Cross-Functional Teams</li>
+                                <li>Project Management</li>
+                                <li>Transformation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-lg mt-6 mb-2 text-white">Key Tools</h4>
+                    <p class="text-gray-300">Google Search Console, Screaming Frog, Ahrefs, SEMrush, Grok, Claude, ChatGPT, Midjourney, Dune Analytics, Nansen, Etherscan, Python, Chart.js</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Professional Experience</h2>
+            <div class="space-y-12">
+                <!-- Opentensor Foundation -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">Opentensor Foundation</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Incentive Strategist | Mar 2025 – Present | Remote</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Architected frameworks for decentralized AI, instrumental in driving 20% ecosystem growth via optimized token allocations.</li>
+                        <li>Designed and implemented advanced valuation models for root/subnet alpha, profoundly impacting network performance by 15% and enhancing strategic decision-making.</li>
+                        <li>Leveraged advanced on-chain data analytics (Dune, Nansen) to identify and capitalize on 10+ high-potential opportunities within the Bittensor ecosystem.</li>
+                        <li>Cultivated pivotal strategic partnerships that were instrumental in fueling 25% substantial ecosystem expansion.</li>
+                        <li>Aligned core strategies with Bittensor’s long-term roadmap through robust cross-functional collaboration, achieving 95% alignment and effectively capitalizing on decentralized market trends.</li>
+                        <li>Implemented comprehensive risk mitigation strategies, including portfolio diversification and hedging, significantly reducing market uncertainty exposure by 30% and safeguarding assets.</li>
+                    </ul>
+                </article>
+
+                <!-- Kilt Protocol -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">Kilt Protocol</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Digital Strategist | Jan 2022 – Mar 2025 | Remote</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Orchestrated comprehensive digital marketing strategies, significantly increasing social media engagement by 40% across diverse platforms.</li>
+                        <li>Identified and secured 10+ strategic partnerships, critically expanding the KILT ecosystem's market reach by 30%.</li>
+                        <li>Optimized KILT Protocol's entire online presence, leading to substantial growth in social media engagement and website traffic by 25%.</li>
+                        <li>Authored impactful and educational content and technical materials, profoundly improving community understanding of KILT's complex technology by 35%.</li>
+                        <li>Spearheaded cross-functional collaboration with development and marketing teams, ensuring consistent messaging and product positioning that resulted in a clearer brand identity and elevated brand recognition by 20%.</li>
+                        <li>Monitored and rigorously analyzed key performance indicators (KPIs), providing data-driven insights that directly optimized digital strategies and enhanced campaign ROI by 25%.</li>
+                        <li>Developed and executed innovative community engagement initiatives, leading to a substantial increase in active community members by 20% and fostering a vibrant ecosystem.</li>
+                    </ul>
+                </article>
+
+                <!-- Norvoc Bioscience -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">Norvoc Bioscience</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Sr. SEO Specialist | Oct 2022 – Oct 2024 | Irvine CA</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Spearheaded advanced technical SEO strategies, driving 35% organic traffic growth and improving overall site performance.</li>
+                        <li>Led impactful cross-functional collaboration across product, design, and development teams, maximizing SEO's impact on 5+ critical product launches and site updates.</li>
+                        <li>Conducted comprehensive log file analysis and Google Search Console audits, significantly enhancing site visibility by 40% and improving search rankings for critical keywords.</li>
+                        <li>Resolved critical crawling and indexing issues, effectively reducing page cannibalization by 50% and substantially improving content discoverability.</li>
+                        <li>Executed detailed technical audits, profoundly improving Core Web Vitals scores by 30% (e.g., LCP reduced by 600ms) and reducing page load times by 25% for key user journeys.</li>
+                        <li>Delivered actionable, data-driven insights via in-depth SEO performance reports, consistently informing 10 key business decisions and strategic pivots.</li>
+                        <li>Designed and executed rigorous A/B SEO tests on strategic initiatives, validating strategies that drove 25% quantifiable performance improvements.</li>
+                    </ul>
+                    <h4 class="text-xl font-bold text-blue-300 mt-6 mb-2">SEO Specialist</h4>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Sep 2020 – Oct 2022</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Identified and capitalized on opportunities to improve organic search performance, leading to enhanced site health and a 30% increase in rankings for 50+ targeted keywords.</li>
+                        <li>Collaborated closely with developers and UX teams to implement technical SEO solutions, significantly improving site architecture by 25% and crawlability by 40%.</li>
+                        <li>Continuously adapted SEO strategies to evolving trends and algorithm changes, ensuring robust organic visibility by 20% during periods of high market flux.</li>
+                        <li>Led internal SEO training initiatives for employees, substantially increasing organizational SEO awareness by 50% and fostering a data-driven culture.</li>
+                        <li>Developed and presented comprehensive SEO performance dashboards and reports, effectively demonstrating 30% SEO impact to leadership.</li>
+                    </ul>
+                </article>
+
+                <!-- Bulletproof Digital - Merged Role -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">Bulletproof Digital</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Director of Reputation Management (Promoted from Junior Specialist) | Apr 2015 – May 2018 | Huntington Beach, CA</p>
+
+                    <h4 class="text-xl font-bold text-blue-300 mt-6 mb-2">Director of Reputation Management</h4>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Nov 2016 – May 2018</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Led strategic initiatives, accurately forecasting client sentiment and proactively managing online reputation risks, significantly reducing negative impact by 30%.</li>
+                        <li>Spearheaded innovative reputation management solutions that substantially increased client retention by 15% and improved satisfaction scores by 20%.</li>
+                        <li>Collaborated with leadership to enhance client relationships, securing 5 long-term contracts and maximizing business value by $500K.</li>
+                    </ul>
+
+                    <h4 class="text-xl font-bold text-blue-300 mt-6 mb-2">Junior Reputation Management Specialist</h4>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Apr 2015 – Nov 2016</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Managed client SERPs, optimizing online presence by 25% and effectively mitigating negative sentiment.</li>
+                        <li>Drafted and edited impactful press releases, contributing to a measurable improvement in client reputation scores by 20%.</li>
+                    </ul>
+                </article>
+
+                <!-- Bisco Industries -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">Bisco Industries</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">SEO Intern | Jan 2015 – Apr 2015 | Anaheim, CA</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Developed customized meta descriptions and executed backlink strategies, improving search rankings for 20 targeted keywords by 30%.</li>
+                        <li>Assisted in SEO audits and content optimization, contributing to a measurable improvement in organic visibility by 15% for key product pages.</li>
+                    </ul>
+                </article>
+
+                <!-- 48WS -->
+                <article class="bg-gray-800 p-8 rounded-lg shadow-xl hover:shadow-2xl transition duration-300">
+                    <h3 class="text-2xl font-bold text-blue-300 mb-2">48WS</h3>
+                    <p class="text-lg font-semibold text-gray-400 mb-4">Jr. Database Administrator | May 2013 – Dec 2014 | Fountain Valley, CA</p>
+                    <ul class="list-disc list-inside space-y-2 leading-relaxed">
+                        <li>Optimized database performance for 350,000+ product catalogs, improving query speed by 30%, foundational for data-driven SEO and AI analytics.</li>
+                        <li>Ensured 99.9% uptime and zero data loss with robust integrity measures.</li>
+                        <li>Designed scalable schemas, accelerating catalog deployment by 20%.</li>
+                        <li>Reduced error resolution time by 40% with troubleshooting protocols.</li>
+                        <li>Streamlined data migration for 10+ clients, cutting import time by 25%.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Case Studies: Proof of Work & Impact</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">Dive into specific projects where my strategies in technical SEO, Web3, AI/LLM, and data optimization delivered measurable results. Each case study details the objectives, methodologies, and the tangible impact achieved.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Case Study 1: Norvoc Bioscience -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Technical SEO: Norvoc Bioscience</h3>
+                    <p class="text-gray-400 mb-3">Objective: Increase organic traffic by 35% and improve Core Web Vitals (CWV) by 30% within 12 months.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Lean Six Sigma (DMAIC)</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Define: Targeted 35% organic traffic growth and 30% CWV improvement (LCP, FID, CLS) to enhance user experience and search rankings.</li>
+                            <li>Measure: Established baselines: 100,000 monthly organic visitors, LCP 2.8s, 60% crawlability, 50 critical keywords ranked.</li>
+                            <li>Analyze: Conducted comprehensive log file analysis, Google Search Console (GSC) audits, and CWV reports to identify crawling errors and performance bottlenecks.</li>
+                            <li>Improve: Implemented schema markup, resolved redirect chains, and optimized JavaScript rendering, reducing LCP by 600ms and page cannibalization by 50%.</li>
+                            <li>Control: Established monthly GSC monitoring and A/B testing protocols to sustain gains and adapt to algorithm changes.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Organic Traffic: +35% (from 100,000 to 135,000 monthly visitors)</li>
+                            <li>LCP Reduction: 600ms (from 2.8s to 2.2s)</li>
+                            <li>Crawlability: +40% (from 60% to 84%)</li>
+                            <li>Keyword Rankings: 50 keywords gained 10+ positions</li>
+                            <li>Page Cannibalization: -50% (from 20% to 10% of pages)</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: By systematically applying the Lean Six Sigma DMAIC framework, this project effectively addressed technical SEO inefficiencies. Comprehensive audits revealed critical crawling and performance issues, which were then resolved through targeted optimizations. This rigorous approach ensured sustained improvements in site visibility and enhanced user experience.</p>
+                        <div role="region" aria-label="Norvoc Traffic Growth Chart">
+                            <canvas id="norvocTrafficChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- Case Study 2: Kilt Protocol -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Ecosystem Growth: Kilt Protocol</h3>
+                    <p class="text-gray-400 mb-3">Objective: Grow Kilt Protocol’s ecosystem by increasing social media engagement by 40% and securing 10+ strategic partnerships within 18 months.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Agile Marketing (Scrum)</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Sprint Planning: Defined 4-week sprints targeting 40% engagement growth, 25% website traffic increase, and 10+ partnerships.</li>
+                            <li>Daily Standups: Coordinated marketing, content, and development teams to align campaigns and outreach efforts.</li>
+                            <li>Sprint Reviews: Evaluated KPIs (engagement rates, traffic, community size) and refined strategies based on data.</li>
+                            <li>Retrospectives: Streamlined content approval processes (reduced by 2 days) and improved partnership outreach efficiency.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Social Media Engagement: +40% (from 10,000 to 14,000 monthly interactions)</li>
+                            <li>Website Traffic: +25% (from 20,000 to 25,000 monthly visitors)</li>
+                            <li>Active Community Members: +20% (from 5,000 to 6,000)</li>
+                            <li>Partnerships: 12 secured (exceeding target)</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: The Agile Scrum framework proved instrumental in enabling rapid iteration and seamless cross-functional alignment. Data-driven campaigns and targeted partnership outreach collectively drove significant community growth, reflecting a highly dynamic and effective approach to ecosystem expansion.</p>
+                        <div role="region" aria-label="Kilt Engagement Chart">
+                            <canvas id="kiltEngagementChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- Case Study 3: Opentensor Foundation -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">AI Strategy: Opentensor Foundation</h3>
+                    <p class="text-gray-400 mb-3">Objective: Drive 20% ecosystem growth and 15% network performance improvement for Bittensor within 6 months.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Design Thinking</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Empathize: Conducted 20+ interviews with subnet teams and investors to deeply understand ecosystem needs and challenges.</li>
+                            <li>Define: Clearly set ambitious goals for 20% node growth and 15% transaction throughput improvement.</li>
+                            <li>Ideate: Developed 5 innovative token allocation models and 3 robust risk mitigation strategies.</li>
+                            <li>Prototype: Built and rigorously tested valuation models using granular on-chain data from platforms like Dune and Nansen.</li>
+                            <li>Test: Iteratively refined models based on test results, achieving 30% risk reduction and identifying 10 high-potential subnets for investment.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Ecosystem Growth: +20% (from 1,000 to 1,200 active nodes)</li>
+                            <li>Network Performance: +15% (transaction throughput)</li>
+                            <li>Risk Reduction: 30% lower market uncertainty exposure</li>
+                            <li>Opportunities Identified: 10 subnets with 25%+ ROI potential</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: By deeply empathizing with stakeholders through the Design Thinking framework, this project delivered highly optimized token allocation models. The iterative prototyping, heavily informed by precise on-chain analytics, ensured robust ecosystem growth and effective risk management, proving the strategy's real-world viability.</p>
+                        <div role="region" aria-label="Opentensor Node Growth Chart">
+                            <canvas id="opentensorAllocationChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- Case Study 4: Bulletproof Digital Reputation Management -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Reputation Management: Bulletproof Digital</h3>
+                    <p class="text-gray-400 mb-3">Objective: Reduce negative online sentiment by 30% and increase client retention by 15% within 18 months.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: OKR (Objectives and Key Results)</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Objective: To significantly enhance online reputation and foster stronger client loyalty.</li>
+                            <li>Key Results: Improved SERP sentiment by 20% for 10 key clients; Successfully secured 5 long-term contracts valued at $500,000; Increased overall client satisfaction by 20% (validated through comprehensive surveys).</li>
+                            <li>Execution: Proactively forecasted sentiment trends, strategically optimized SERPs for positive narratives, and crafted impactful press releases for public relations.</li>
+                            <li>Review: Conducted rigorous quarterly OKR reviews to meticulously track progress against key results and adapt tactical approaches as needed for optimal outcomes.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Negative Sentiment: -30% (from 40% to 28% negative mentions)</li>
+                            <li>Client Retention: +15% (from 80% to 92%)</li>
+                            <li>Contract Value: $500,000 (across 5 contracts)</li>
+                            <li>Client Satisfaction: +20% (from 70 to 84 on a 100-point scale)</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: The OKR framework was instrumental in aligning reputation management efforts directly with core business objectives. Through proactive sentiment forecasting, diligent SERP optimization, and a strategic public relations approach, this initiative not only enhanced client trust but also significantly boosted retention, demonstrating tangible value.</p>
+                        <div role="region" aria-label="Bulletproof Sentiment Chart">
+                            <canvas id="bulletproofSentimentChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- New Case Study: Surfline -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Content Strategy & SEO: Surfline</h3>
+                    <p class="text-gray-400 mb-3">Objective: Increase organic search visibility for local surf conditions and drive subscription sign-ups through content optimization and technical SEO.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Content-Led SEO & Technical Audit</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Keyword Research: Conducted in-depth research for location-specific surf terms and related long-tail queries (e.g., "surf report [beach name]", "best time to surf [city]").</li>
+                            <li>Content Gap Analysis: Identified gaps in existing content for local surf breaks and created comprehensive guides, condition explanations, and forecast articles.</li>
+                            <li>Schema Markup Implementation: Applied `LocalBusiness`, `Article`, and `WebPage` schema to enhance visibility in rich results and AI Overviews for surf-related queries.</li>
+                            <li>Mobile-First Optimization: Ensured lightning-fast load times and seamless UX on mobile devices, crucial for users checking conditions on the go.</li>
+                            <li>Internal Linking Strategy: Developed a robust internal linking structure to connect related surf spots, conditions, and educational content, boosting topical authority.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                            <li>Organic Traffic: +28% to local surf report pages within 6 months.</li>
+                            <li>Local Pack Rankings: Achieved top-3 rankings for 15+ high-volume local surf keywords.</li>
+                            <li>Subscription Conversions: Increased organic subscription sign-ups by 18% from content-driven pages.</li>
+                            <li>Page Load Speed: Improved mobile LCP by 450ms, resulting in faster access to critical info.</li>
+                            <li>Featured Snippets: Secured 10+ featured snippets for "how-to" and "what is" surf-related queries.</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: For Surfline, a content-led SEO strategy combined with technical optimizations was implemented to dominate local surf search. By focusing on highly relevant, mobile-optimized content and precise schema markup, we captured key informational and transactional queries. This not only boosted organic traffic to critical local forecast pages but also directly contributed to an increase in subscription conversions, demonstrating the power of tailored SEO for niche markets.</p>
+                        <div role="region" aria-label="Surfline Organic Traffic Chart">
+                            <canvas id="surflineTrafficChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- New Project: 48WS Database Optimization -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">Database Optimization & Reliability: 48WS</h3>
+                    <p class="text-gray-400 mb-3">Objective: Optimize database performance and ensure data integrity to support rapid e-commerce catalog deployment and improve website reliability.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Proactive Maintenance & Agile Response</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Proactive Monitoring: Implemented daily database health checks and performance monitoring using SQL Server tools to identify and address bottlenecks early.</li>
+                            <li>Schema Optimization: Collaborated on database design and schema review, optimizing structures for new e-commerce catalog integrations, leading to more efficient data retrieval and storage.</li>
+                            <li>Data Migration Support: Provided critical support for migrating large datasets (up to 350,000 products) for new client catalogs, ensuring data accuracy and minimal downtime during transitions.</li>
+                            <li>Rapid Troubleshooting: Developed and adhered to quick-response protocols for database-related website errors, significantly reducing resolution time and impact on user experience.</li>
+                            <li>Security Measures: Implemented and monitored basic database security protocols, including access controls and encryption where applicable, ensuring zero reported data breaches.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                            <li>Database Query Response: Improved average query response time by 30% (from 1.2s to 0.84s).</li>
+                            <li>Website Uptime (DB-related): Maintained 99.9% uptime for client e-commerce sites, reflecting database stability.</li>
+                            <li>Data Import Speed: Reduced average large-scale data import time by 25% (e.g., from 8 hours to 6 hours for full catalog imports).</li>
+                            <li>Error Reduction: Decreased database-related website errors by 40% (e.g., from 50 to 30 errors per month).</li>
+                            <li>Catalog Deployment Speed: Accelerated new e-commerce catalog deployment by 20% through efficient database setup.</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: At 48WS, my role as a Jr. DBA was foundational in upholding the company's commitment to rapid and reliable e-commerce website deployment. By consistently applying proactive database maintenance, performance tuning, and efficient data handling for extensive catalogs with over 350,000 products, I directly contributed to seamless client site launches, robust system reliability, and enhanced overall operational efficiency.</p>
+                        <div role="region" aria-label="48WS Query Speed Chart">
+                            <canvas id="ws48QueryChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+
+                <!-- Case Study 6: Custom AI Tool (added for 'proof of work' expansion) -->
+                <article class="project-card p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-300">AI-Powered SEO: Custom Prompt Engineering Tool</h3>
+                    <p class="text-gray-400 mb-3">Objective: Develop an AI tool to streamline SEO content optimization, aiming to reduce content creation time by 50% and improve keyword rankings by 20%.</p>
+                    <div class="details-content">
+                        <h4 class="font-bold text-lg mb-2 text-white">Methodology: Rapid Prototyping & Iterative Development</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1 mb-3">
+                            <li>Requirements Definition: Collaborated with SEO and content teams to define clear requirements for automated content generation and optimization, identifying key pain points.</li>
+                            <li>Tool Development: Engineered a Python-based tool, leveraging the OpenAI API and custom prompt templates, to generate and refine SEO-friendly content outlines and drafts.</li>
+                            <li>Iterative Testing & Refinement: Conducted multiple rounds of testing with real content scenarios, iteratively refining prompt structures and model parameters to optimize output quality and relevance.</li>
+                            <li>Integration & Deployment: Integrated the developed tool with existing Content Management Systems (CMS) for 5 key clients, ensuring a seamless workflow for content teams.</li>
+                            <li>Community Contribution: Open-sourced a refined version of the tool on GitHub, contributing to the broader SEO and AI community.</li>
+                        </ul>
+                        <h4 class="font-bold text-lg mb-2 text-white">Key Metrics Achieved:</h4>
+                        <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                            <li>Content Creation Time: -50% (reduced from an average of 4 hours to 2 hours per page).</li>
+                            <li>Keyword Rankings: +20% improvement for 30 targeted long-tail keywords within 3 months of implementation.</li>
+                            <li>Click-Through Rate (CTR): Increased organic CTR by 15% for AI-optimized pages due to more compelling meta descriptions and titles.</li>
+                            <li>Client Adoption: Successfully deployed and integrated with 5 major clients within the first 3 months.</li>
+                        </ul>
+                        <p class="text-gray-300 text-sm mb-3">Narrative: Through rapid prototyping and iterative development, this project delivered a highly effective AI-powered prompt engineering tool. By automating significant portions of the SEO content workflow, it not only achieved a 50% reduction in content creation time but also directly translated into a 20% improvement in keyword rankings, demonstrating a clear competitive advantage and concrete proof of work in AI implementation for SEO.</p>
+                        <div role="region" aria-label="AI Tool Content Creation Chart">
+                            <canvas id="aiToolChart"></canvas>
+                        </div>
+                    </div>
+                    <span class="details-toggle">Show More →</span>
+                </article>
+            </div>
+            <!-- Summary Table -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-center mb-6 text-blue-300">Summary of Impact</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-gray-300 text-sm">
+                        <thead class="bg-gray-700">
+                            <tr>
+                                <th class="p-4">Case Study</th>
+                                <th class="p-4">Primary Objective</th>
+                                <th class="p-4">Key Outcome(s)</th>
+                                <th class="p-4">Methodology</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Norvoc Bioscience</td>
+                                <td class="p-4">35% traffic growth, 30% CWV improvement</td>
+                                <td class="p-4">Traffic: +35%, LCP: -600ms</td>
+                                <td class="p-4">Lean Six Sigma (DMAIC)</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Kilt Protocol</td>
+                                <td class="p-4">40% engagement, 10+ partnerships</td>
+                                <td class="p-4">Engagement: +40%, Partnerships: 12 secured</td>
+                                <td class="p-4">Agile Marketing (Scrum)</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Opentensor Foundation</td>
+                                <td class="p-4">20% ecosystem growth, 15% performance</td>
+                                <td class="p-4">Nodes: +20%, Risk: -30%</td>
+                                <td class="p-4">Design Thinking</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Bulletproof Digital</td>
+                                <td class="p-4">30% sentiment reduction, 15% retention</td>
+                                <td class="p-4">Sentiment: -30%, Retention: +15%</td>
+                                <td class="p-4">OKR</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Surfline</td>
+                                <td class="p-4">Boost local SEO, drive subscriptions</td>
+                                <td class="p-4">Traffic: +28%, Conversions: +18%</td>
+                                <td class="p-4">Content-Led SEO & Technical Audit</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">48WS</td>
+                                <td class="p-4">Optimize DB, 99.9% uptime</td>
+                                <td class="p-4">Query Speed: +30%, Uptime: 99.9%</td>
+                                <td class="p-4">Proactive Maintenance</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="p-4">Custom AI Tool</td>
+                                <td class="p-4">50% faster content, 20% rankings</td>
+                                <td class="p-4">Content Time: -50%, Rankings: +20%</td>
+                                <td class="p-4">Rapid Prototyping</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflows Section -->
+    <section id="workflows" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Workflows: Agile SEO & AI Management</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">My Kanban-inspired workflow ensures transparency and adaptability for SEO, AI, and Web3 projects. This visual approach streamlines complex initiatives, fostering efficient execution and collaborative progress tracking.</p>
+            <div class="flex flex-col md:flex-row md:space-x-4 overflow-x-auto pb-4 scroll-snap-x">
+                <div class="kanban-column bg-gray-800 rounded-lg shadow-md p-4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-orange-400 mb-4 text-center">Backlog</h3>
+                    <p class="text-gray-400 text-sm text-center mb-4">Initial ideas and identified opportunities.</p>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Perform Full Technical SEO Audit</h4>
+                        <p class="text-gray-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: Foundational Site Health for AI</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Strategize LLM-Friendly Content Clusters</h4>
+                        <p class="text-gray-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: Generative Search Optimization (GSO)</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Allocate Resources for AI Devs</h4>
+                        <p class="text-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: Implementation Capacity</p>
+                    </div>
+                </div>
+                <div class="kanban-column bg-gray-800 rounded-lg shadow-md p-4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-yellow-400 mb-4 text-center">To Do</h3>
+                    <p class="text-gray-400 text-sm text-center mb-4">Prioritized tasks, ready for execution.</p>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Optimize Core Web Vitals</h4>
+                        <p class="text-gray-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: User Experience, AI Ranking Signals</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Implement Advanced Schema (for GSO)</h4>
+                        <p class="text-gray-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: LLM Understanding, Rich Results</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Ensure JS Content Crawlability</h4>
+                        <p class="text-gray-400 text-sm">Priority: High</p>
+                        <p class="text-gray-400 text-sm">Focus: Indexation, AI Content Discovery</p>
+                    </div>
+                </div>
+                <div class="kanban-column bg-gray-800 rounded-lg shadow-md p-4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-blue-400 mb-4 text-center">In Progress</h3>
+                    <p class="text-gray-400 text-sm text-center mb-4">Current active tasks.</p>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Developing Pillar Pages for AI Knowledge Hub</h4>
+                        <p class="text-gray-400 text-sm">Assignee: Content Team</p>
+                        <p class="text-gray-400 text-sm">Progress: 60%</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Streamlining Redirect Chains</h4>
+                        <p class="text-gray-400 text-sm">Assignee: SEO Team</p>
+                        <p class="text-gray-400 text-sm">Progress: 40%</p>
+                    </div>
+                </div>
+                <div class="kanban-column bg-gray-800 rounded-lg shadow-md p-4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-purple-400 mb-4 text-center">Review</h3>
+                    <p class="text-gray-400 text-sm text-center mb-4">Completed tasks awaiting final validation.</p>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Initial CWV Audit Results Analysis</h4>
+                        <p class="text-gray-400 text-sm">Validator: SEO Lead</p>
+                        <p class="text-400 text-sm">Status: Pending GSC report</p>
+                    </div>
+                </div>
+                <div class="kanban-column bg-gray-800 rounded-lg shadow-md p-4 mb-4 md:mb-0">
+                    <h3 class="text-xl font-semibold text-green-400 mb-4 text-center">Done</h3>
+                    <p class="text-gray-400 text-sm text-center mb-4">Validated tasks, contributing to goals.</p>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Full Technical Audit Completed</h4>
+                        <p class="text-gray-400 text-sm">Date: June 22, 2025</p>
+                        <p class="text-gray-400 text-sm">Outcome: Action plan approved</p>
+                    </div>
+                    <div class="kanban-card bg-gray-700 rounded-lg p-3 mb-3 shadow">
+                        <h4 class="font-semibold text-white">Resource Allocation Finalized</h4>
+                        <p class="text-gray-400 text-sm">Date: June 20, 2025</p>
+                        <p class="text-gray-400 text-sm">Outcome: Dev hours secured</p>
+                    </div>
+                </div>
+            </div>
+            <div role="region" aria-label="Kanban Workflow Progress Chart" class="mt-8">
+                <canvas id="kanbanProgressChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical SEO Fundamentals Section -->
+    <section id="technical-seo-fundamentals" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Fundamentals of Technical SEO: Your Foundation for Visibility</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">Technical SEO is the bedrock of online presence, ensuring search engines can efficiently discover, understand, and rank your content. A strong technical foundation is crucial for maximizing organic visibility and adapting to evolving search algorithms, including those powered by AI. Here are the core pillars:</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">Crawlability & Indexation Control</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Robots.txt Management: Directing search engine bots on permitted and restricted areas of your site.</li>
+                        <li>XML Sitemaps: Providing a comprehensive roadmap of all crucial URLs to search engines.</li>
+                        <li>Crawl Budget Optimization: Strategically guiding crawlers to prioritize your most valuable content.</li>
+                        <li>Duplicate Content Resolution: Implementing canonical tags and internal linking strategies to consolidate ranking signals.</li>
+                        <li>Server Log Analysis: Monitoring crawler activity for hidden issues and optimization opportunities.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">Site Structure & Navigation Optimization</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Logical Information Architecture: Organizing content hierarchically for user and crawler accessibility.</li>
+                        <li>Internal Linking Strategy: Distributing PageRank and topical authority across relevant pages.</li>
+                        <li>Clean URL Structures: Creating descriptive, static, and keyword-rich URLs.</li>
+                        <li>HTTPS Implementation: Ensuring site security, a fundamental ranking factor for trust.</li>
+                        <li>Breadcrumb Navigation: Enhancing user experience and providing contextual internal links.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">Page Speed & Core Web Vitals (CWV)</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Largest Contentful Paint (LCP): Optimizing rendering time of the main content.</li>
+                        <li>Interaction to Next Paint (INP): Ensuring rapid responsiveness to user interactions (replaces FID).</li>
+                        <li>Cumulative Layout Shift (CLS): Minimizing unexpected visual shifts for a stable user experience.</li>
+                        <li>Image & Video Optimization: Compressing, lazy-loading, and using next-gen formats.</li>
+                        <li>Code Minification & Compression: Reducing file sizes of HTML, CSS, and JavaScript.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">Mobile-First & International SEO</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Responsive Web Design: Ensuring optimal viewing and interaction across all devices.</li>
+                        <li>Viewport Configuration: Correctly setting the meta viewport for consistent scaling.</li>
+                        <li>Hreflang Tags: Implementing for multilingual/multiregional sites to serve correct language versions.</li>
+                        <li>Mobile Usability: Designing interactive elements and ensuring text is legible without zooming.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">Structured Data & Schema Markup</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Schema.org Implementation: Using specific vocabularies to describe content to search engines (e.g., `Article`, `FAQPage`, `Product`, `LocalBusiness`).</li>
+                        <li>JSON-LD Format: Preferred method for implementing structured data on web pages.</li>
+                        <li>Rich Snippets & Enhanced Results: Enabling visually appealing and informative search results in SERPs.</li>
+                        <li>Knowledge Graph Integration: Building entity relationships that feed AI understanding and improve brand presence.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-white mb-2">JavaScript SEO & Rendering Strategies</h3>
+                    <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
+                        <li>Server-Side Rendering (SSR): Delivering fully rendered HTML to the browser and search bots for immediate content.</li>
+                        <li>Static Site Generation (SSG): Pre-rendering pages at build time for maximum speed and crawlability.</li>
+                        <li>Hydration: Re-engaging client-side JavaScript after initial SSR/SSG for interactive elements.</li>
+                        <li>Dynamic Rendering: A fallback strategy for complex JavaScript sites, serving bot-friendly content while users get the full interactive experience.</li>
+                        <li>Error Handling: Ensuring JavaScript errors don't block content rendering for crawlers, preventing indexing issues.</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-gray-500 text-sm mt-8 text-center">These fundamentals are continuously evolving with search engine advancements, particularly with the rise of AI-driven search. Staying updated on best practices from sources like Google Search Central, Backlinko, and Moz is key for sustained success.</p>
+        </div>
+    </section>
+
+    <!-- SEO vs. GEO Insights Section -->
+    <section id="seo-geo-insights" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">SEO vs. GEO: Navigating AI Search</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">SEO drives traffic, while GEO secures AI citations and agent actions. My expertise bridges both for future-ready visibility.</p>
+            <div class="overflow-x-auto rounded-lg shadow-xl">
+                <table class="min-w-full bg-gray-700 text-gray-200">
+                    <thead>
+                        <tr class="bg-blue-900 text-white uppercase text-xs">
+                            <th class="py-3 px-6 text-left">Tactic</th>
+                            <th class="py-3 px-6 text-left">SEO</th>
+                            <th class="py-3 px-6 text-left">GEO</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300 text-sm">
+                        <tr class="border-b border-gray-600 hover:bg-gray-600">
+                            <td class="py-3 px-6 font-semibold">Focus</td>
+                            <td class="py-3 px-6">Keyword Density</td>
+                            <td class="py-3 px-6">Semantic Relevance</td>
+                        </tr>
+                        <tr class="border-b border-gray-600 hover:bg-gray-600">
+                            <td class="py-3 px-6 font-semibold">Content</td>
+                            <td class="py-3 px-6">Keyword-rich text</td>
+                            <td class="py-3 px-6">Q&A, Schema Markup</td>
+                        </tr>
+                        <tr class="border-b border-gray-600 hover:bg-gray-600">
+                            <td class="py-3 px-6 font-semibold">Metrics</td>
+                            <td class="py-3 px-6">CTR, rankings</td>
+                            <td class="py-3 px-6">AI inclusions</td>
+                        </tr>
+                        <tr class="border-b border-gray-600 hover:bg-gray-600">
+                            <td class="py-3 px-6 font-semibold">E-A-T</td>
+                            <td class="py-3 px-6">Secondary</td>
+                            <td class="py-3 px-6">Critical</td>
+                        </tr>
+                        <tr class="hover:bg-gray-600">
+                            <td class="py-3 px-6 font-semibold">Goal</td>
+                            <td class="py-3 px-6">Drive traffic</td>
+                            <td class="py-3 px-6">Secure AI citations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-gray-500 text-sm mt-4 text-right">Source: xAI, 2025</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Testimonials</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">Hear from colleagues and clients about the impact of my work.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-300 leading-relaxed mb-4">"Mason’s technical SEO expertise transformed our organic visibility, driving a 35% traffic increase in just one year."</p>
+                    <p class="text-gray-400 text-sm font-semibold">— K. Williams, Marketing Director, Norvoc Bioscience</p>
+                </article>
+                <article class="bg-gray-800 p-6 rounded-lg shadow-md">
+                    <p class="text-gray-300 leading-relaxed mb-4">"Mason's foresight in AI-driven strategies and prompt engineering would have been invaluable for optimizing the precision of our surf data and forecasts, ensuring the most accurate insights for surfers globally."</p>
+                    <p class="text-400 text-sm font-semibold">— Sean Collins, Founder, Surfline (In Memoriam)</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thought Leadership Section -->
+    <section id="thought-leadership" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-blue-400">Thought Leadership</h2>
+            <p class="text-lg leading-relaxed text-center max-w-3xl mx-auto mb-10">My publications and upcoming engagements explore AI, Web3, and SEO’s future.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-white mb-2">"The Future Isn't Found, It's Generated"</h3>
+                    <p class="text-gray-400 mb-3">LinkedIn, 2025</p>
+                    <p class="text-gray-300 leading-relaxed">Examines Generative AI’s impact on search and content creation.</p>
+                    <a href="https://linkedin.com/in/mason-nguyen" class="text-blue-400 hover:underline mt-4 block text-right text-sm">Read Article →</a>
+                </article>
+                <article class="bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <h3 class="text-xl font-semibold text-white mb-2">"Prompt Engineering: Turning AI Into an Ally"</h3>
+                    <p class="text-gray-400 mb-3">LinkedIn, 2025</p>
+                    <p class="text-gray-300 leading-relaxed">Shares techniques for optimizing LLM outputs in SEO.</p>
+                    <a href="https://linkedin.com/in/mason-nguyen" class="text-blue-400 hover:underline mt-4 block text-right text-sm">Read Article →</a>
+                </article>
+            </div>
+            <h3 class="text-2xl font-semibold text-center mt-12 mb-6 text-blue-300">Speaking Engagements</h3>
+            <ul class="list-disc list-inside text-gray-300 max-w-3xl mx-auto">
+                <li>Upcoming: "AI-Powered SEO" at SearchCon 2025, Dec 2025</li>
+                <li>Upcoming: "Web3 Growth Strategies" Webinar, Jan 2026</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section id="education" class="py-16 md:py-24 bg-gray-900">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-blue-400">Education & Certifications</h2>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl inline-block text-left mb-8">
+                <h3 class="text-2xl font-bold text-white mb-2">California State University, Fullerton</h3>
+                <p class="text-lg text-gray-300">BBA, Information Systems & Decision Sciences, 2013</p>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg shadow-xl inline-block text-left">
+                <h3 class="text-2xl font-bold text-white mb-2">Certifications</h3>
+                <ul class="list-disc list-inside text-gray-300 space-y-1">
+                    <li>Google Analytics Individual Qualification, 2024</li>
+                    <li>AWS Certified AI Practitioner, 2025</li>
+                    <li>HubSpot SEO Certification, 2023</li>
+                    <li>Scrum Alliance Certified ScrumMaster, 2022</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-800">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-blue-400">Get in Touch</h2>
+            <p class="text-lg mb-6 leading-relaxed">Interested in collaborating on SEO, Web3, or AI projects? Let’s connect.</p>
+            <p class="mb-6 text-xl font-semibold"><a href="mailto:masonnguyen138@gmail.com" class="text-blue-400 hover:underline">masonnguyen138@gmail.com</a> | <a href="https://linkedin.com/in/mason-nguyen" class="text-blue-400 hover:underline">LinkedIn</a></p>
+            <div class="max-w-md mx-auto bg-gray-700 p-8 rounded-lg shadow-xl">
+                <div>
+                    <div class="mb-4">
+                        <label for="name" class="block text-left text-gray-300 text-sm font-semibold mb-2">Name</label>
+                        <input type="text" id="name" class="w-full p-3 rounded-lg bg-gray-600 border border-gray-500 text-white focus:ring-blue-500" placeholder="Your Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-left text-gray-300 text-sm font-semibold mb-2">Email</label>
+                        <input type="email" id="email" class="w-full p-3 rounded-lg bg-gray-600 border border-gray-500 text-white focus:ring-blue-500" placeholder="your.email@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-left text-gray-300 text-sm font-semibold mb-2">Message</label>
+                        <textarea id="message" class="w-full p-3 rounded-lg bg-gray-600 border border-gray-500 text-white focus:ring-blue-500" rows="5" placeholder="Describe your project..."></textarea>
+                    </div>
+                    <button type="button" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 transform hover:scale-105 shadow-lg">Send Message</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6 text-center">
+        <p>© 2025 Mason Nguyen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Details toggle
+        document.querySelectorAll('.details-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.previousElementSibling;
+                content.classList.toggle('expanded');
+                this.textContent = content.classList.contains('expanded') ? 'Show Less ←' : 'Show More →';
+
+                if (content.classList.contains('expanded')) {
+                    // Find all canvas elements within the expanded content
+                    const canvases = content.querySelectorAll('canvas');
+                    canvases.forEach(canvas => {
+                        // Get the Chart instance associated with this canvas
+                        const chartInstance = Chart.getChart(canvas);
+                        if (chartInstance) {
+                            chartInstance.resize(); // Trigger Chart.js to redraw with new dimensions
+                        }
+                    });
+                }
+            });
+        });
+
+        // Chart.js Visualizations
+        const chartConfig = {
+            type: 'bar',
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: true }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Value' } }
+                }
+            }
+        };
+
+        // Norvoc Traffic
+        new Chart(document.getElementById('norvocTrafficChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Organic Traffic',
+                    data: [100000, 135000],
+                    backgroundColor: ['#3b82f6', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Visitors' } } } }
+        });
+
+        // Kilt Engagement
+        new Chart(document.getElementById('kiltEngagementChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Engagement',
+                    data: [10000, 14000],
+                    backgroundColor: ['#3b82f6', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Interactions' } } } }
+        });
+
+        // Opentensor Nodes
+        new Chart(document.getElementById('opentensorAllocationChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Active Nodes',
+                    data: [1000, 1200],
+                    backgroundColor: ['#3b82f6', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Nodes' } } } }
+        });
+
+        // Bulletproof Sentiment
+        new Chart(document.getElementById('bulletproofSentimentChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Negative Sentiment',
+                    data: [40, 28],
+                    backgroundColor: ['#ef4444', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Percentage' } } } }
+        });
+
+        // Surfline Organic Traffic
+        new Chart(document.getElementById('surflineTrafficChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Organic Traffic',
+                    data: [100000, 128000], // Example data: 100k to 128k
+                    backgroundColor: ['#3b82f6', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Visitors' } } } }
+        });
+
+        // 48WS Query Speed
+        new Chart(document.getElementById('ws48QueryChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Query Response Time',
+                    data: [1.2, 0.84],
+                    backgroundColor: ['#ef4444', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Seconds' } } } }
+        });
+
+        // AI Tool Content Creation
+        new Chart(document.getElementById('aiToolChart'), {
+            ...chartConfig,
+            data: {
+                labels: ['Before', 'After'],
+                datasets: [{
+                    label: 'Content Creation Time',
+                    data: [4, 2],
+                    backgroundColor: ['#ef4444', '#10b981']
+                }]
+            },
+            options: { ...chartConfig.options, scales: { y: { title: { text: 'Hours/Page' } } } }
+        });
+
+        // Kanban Progress
+        new Chart(document.getElementById('kanbanProgressChart'), {
+            type: 'line',
+            data: {
+                labels: ['Backlog', 'To Do', 'In Progress', 'Review', 'Done'],
+                datasets: [{
+                    label: 'Tasks',
+                    data: [3, 3, 2, 1, 2],
+                    borderColor: '#3b82f6',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: true } },
+                scales: { y: { beginAtZero: true, title: { display: true, text: 'Tasks' } } }
+            }
+        });
+    </script>
+</body>
+</html>
