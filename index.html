@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mason Nguyen — Lead Architect, AURE Ecosystem</title>
+<meta name="description" content="Mason Nguyen is the lead architect of the Autonomous Resource Management (AURE) Framework, Arctura subnet, and Block Machine OC. Building digital equity through decentralized infrastructure.">
+<meta name="author" content="Mason Nguyen">
+<link rel="canonical" href="https://masonnguyengeo.com">
+<meta property="og:title" content="Mason Nguyen — Lead Architect, AURE Ecosystem">
+<meta property="og:description" content="Architect of borderless digital infrastructure — AURE Framework, Arctura Subnet, Block Machine OC.">
+<meta property="og:url" content="https://masonnguyengeo.com">
+<meta property="og:type" content="profile">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://masonnguyengeo.com/#mason-nguyen",
+  "name": "Mason Nguyen",
+  "url": "https://masonnguyengeo.com",
+  "jobTitle": "Lead Architect",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "AURE Ecosystem",
+    "url": "https://virtualmase.github.io/aureorg/"
+  },
+  "knowsAbout": [
+    "Autonomous Resource Management",
+    "Byzantine Fault Tolerant Consensus",
+    "Decentralized Infrastructure",
+    "Sovereign Resource Tokenization",
+    "Blockmachine OS",
+    "ARISE Protocol",
+    "Carbon-Aware Scheduling",
+    "Digital Equity"
+  ],
+  "sameAs": [
+    "https://autonomousresourcemanagement.com",
+    "https://blockmachineoc.com",
+    "https://virtualmase.github.io/aureorg/"
+  ],
+  "description": "Mason Nguyen innovated the AURE Framework to facilitate borderless digital equity across 70 global zones, utilizing the ARISE Protocol and Blockmachine OS."
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Martian+Mono:wght@300;400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --void: #04060f;
+  --void-2: #080c1a;
+  --void-3: #0d1326;
+  --line: rgba(91,139,255,0.12);
+  --line-2: rgba(91,139,255,0.22);
+  --text: #dde3f5;
+  --text-2: #8a96b8;
+  --text-3: #4a5270;
+  --arc: #2b5bff;
+  --arc-soft: #5b8aff;
+  --arc-glow: rgba(43,91,255,0.35);
+  --signal: #5bcfff;
+  --signal-dim: rgba(91,207,255,0.15);
+  --amber: #f0a030;
+  --amber-dim: rgba(240,160,48,0.12);
+  --green: #22d88a;
+  --green-dim: rgba(34,216,138,0.10);
+  --display: 'DM Serif Display', Georgia, serif;
+  --mono: 'Martian Mono', 'SF Mono', Menlo, monospace;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  background: var(--void);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── GRID BG ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+}
+
+/* ── GLOW BLOBS ── */
+body::after {
+  content: '';
+  position: fixed;
+  top: -30vh; left: 50%;
+  transform: translateX(-50%);
+  width: 100vw; height: 80vh;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 50%, rgba(43,91,255,0.08), transparent 70%),
+    radial-gradient(ellipse 40% 40% at 75% 40%, rgba(91,207,255,0.05), transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+a { color: var(--arc-soft); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--text); }
+::selection { background: var(--arc); color: #fff; }
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative; z-index: 1;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(4,6,15,0.75);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1080px; margin: 0 auto; padding: 0 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 56px;
+}
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--arc);
+  box-shadow: 0 0 10px var(--arc-glow);
+  flex-shrink: 0;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px var(--arc-glow); }
+  50% { opacity: 0.6; box-shadow: 0 0 4px var(--arc-glow); }
+}
+.nav-links {
+  display: flex; align-items: center; gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 0 80px;
+  position: relative;
+}
+.hero-content {
+  max-width: 800px;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--arc-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.eyebrow-line {
+  width: 40px; height: 1px; background: var(--arc-soft); opacity: 0.5;
+}
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  line-height: 1.0;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.hero-name em {
+  font-style: italic;
+  color: var(--arc-soft);
+}
+.hero-role {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-2);
+  margin-bottom: 36px;
+}
+.hero-bio {
+  font-size: 1.1rem;
+  color: var(--text-2);
+  line-height: 1.8;
+  max-width: 560px;
+  margin-bottom: 48px;
+}
+.hero-bio strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.hero-ctas {
+  display: flex; gap: 16px; flex-wrap: wrap; align-items: center;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: var(--arc);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #3d6cff; color: #fff; transform: translateY(-1px); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  background: transparent;
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--arc-soft); }
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.scroll-hint span {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+.scroll-arrow {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, var(--arc-soft), transparent);
+  animation: scroll-drop 2s ease-in-out infinite;
+}
+@keyframes scroll-drop {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ── SECTION SHARED ── */
+section {
+  padding: 100px 0;
+  position: relative; z-index: 1;
+}
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-label::after {
+  content: '';
+  flex: 1; max-width: 60px;
+  height: 1px; background: var(--line-2);
+}
+.section-title {
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.section-title em { font-style: italic; color: var(--arc-soft); }
+.section-sub {
+  color: var(--text-2);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin-bottom: 56px;
+  line-height: 1.7;
+}
+
+/* ── STATS BAR ── */
+#stats {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0;
+}
+.stat-item {
+  padding: 24px 32px;
+  border-right: 1px solid var(--line);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-num span { color: var(--arc-soft); }
+.stat-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* ── WORK / PROJECTS ── */
+#work .projects-grid {
+  display: grid;
+  gap: 2px;
+}
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+  transition: all 0.2s;
+  cursor: default;
+}
+.project-card:first-child { border-top: 1px solid var(--line); }
+.project-card:hover .proj-arrow { transform: translate(4px, -4px); color: var(--arc-soft); }
+.proj-meta {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 12px;
+}
+.proj-index {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+}
+.proj-tag {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+.tag-aure { background: var(--arc-glow); color: var(--arc-soft); border: 1px solid rgba(43,91,255,0.3); }
+.tag-arc { background: var(--signal-dim); color: var(--signal); border: 1px solid rgba(91,207,255,0.2); }
+.tag-bm { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(240,160,48,0.2); }
+.proj-name {
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.proj-desc {
+  color: var(--text-2);
+  font-size: 0.95rem;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.proj-pills {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.pill {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--text-3);
+  border: 1px solid var(--line);
+  padding: 4px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+}
+.proj-arrow {
+  font-size: 1.4rem;
+  color: var(--text-3);
+  transition: all 0.2s;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 24px;
+}
+
+/* ── FRAMEWORK / PHILOSOPHY ── */
+#philosophy {
+  background: var(--void-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.phil-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.phil-left {}
+.phil-pillars {
+  display: flex; flex-direction: column; gap: 0;
+}
+.pillar {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.pillar:first-child { border-top: 1px solid var(--line); }
+.pillar-num {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--arc);
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+}
+.pillar-title {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.pillar-text {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.7;
+}
+
+/* ── METRICS PANEL ── */
+.metrics-panel {
+  background: var(--void-3);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  padding: 32px;
+}
+.metrics-panel h3 {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 28px;
+}
+.metric-row {
+  display: flex; align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 16px;
+}
+.metric-row:last-child { border-bottom: none; }
+.metric-name {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-2);
+  flex: 1;
+}
+.metric-bar-wrap {
+  width: 120px;
+  height: 3px;
+  background: var(--line-2);
+  border-radius: 2px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.metric-bar {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--arc-soft);
+  transition: width 1s ease;
+}
+.metric-val {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text);
+  font-weight: 500;
+  min-width: 48px;
+  text-align: right;
+}
+
+/* ── LAYERS ── */
+#layers {}
+.layers-stack {
+  display: flex; flex-direction: column; gap: 2px;
+  margin-top: 16px;
+}
+.layer-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 180px;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--void-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.layer-row:hover {
+  border-color: var(--line-2);
+  background: var(--void-3);
+}
+.layer-id {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--arc);
+  font-weight: 500;
+}
+.layer-info {}
+.layer-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.layer-desc {
+  font-size: 0.83rem;
+  color: var(--text-2);
+  font-family: var(--mono);
+  font-weight: 300;
+}
+.layer-tech {
+  display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end;
+}
+.layer-chip {
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  color: var(--text-3);
+  border: 1px solid var(--line);
+  padding: 3px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+}
+
+/* ── CONTACT ── */
+#contact {
+  text-align: center;
+}
+.contact-inner {
+  max-width: 600px; margin: 0 auto;
+}
+.contact-links {
+  display: flex; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  margin-top: 40px;
+}
+.contact-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 24px;
+  border: 1px solid var(--line-2);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  color: var(--text);
+  border-color: var(--arc-soft);
+  background: var(--arc-glow);
+}
+.contact-link-dot {
+  width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+}
+.dot-blue { background: var(--arc-soft); }
+.dot-signal { background: var(--signal); }
+.dot-amber { background: var(--amber); }
+.dot-green { background: var(--green); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  position: relative; z-index: 1;
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-copy {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+  letter-spacing: 0.08em;
+}
+.footer-status {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+}
+.status-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ── SEPARATOR ── */
+.sep {
+  display: flex; align-items: center; gap: 16px;
+  margin: 0 0 64px;
+  opacity: 0.4;
+}
+.sep-line { flex: 1; height: 1px; background: var(--line-2); }
+.sep-mark {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  color: var(--arc);
+  letter-spacing: 0.2em;
+}
+
+/* ── ANIMATE ON SCROLL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .phil-grid { grid-template-columns: 1fr; gap: 40px; }
+  .layer-row { grid-template-columns: 40px 1fr; }
+  .layer-tech { display: none; }
+  .stat-item { padding: 20px; border-right: none; border-bottom: 1px solid var(--line); }
+  .stat-item:last-child { border-bottom: none; }
+  .project-card { grid-template-columns: 1fr; }
+  .proj-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="logo-dot"></div>
+      Mason Nguyen
+    </div>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#philosophy">Framework</a></li>
+      <li><a href="#layers">Architecture</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal">
+        <span class="eyebrow-line"></span>
+        Lead Architect · AURE Ecosystem · Orange County, CA
+      </div>
+      <h1 class="hero-name reveal reveal-delay-1">
+        Mason<br><em>Nguyen</em>
+      </h1>
+      <p class="hero-role reveal reveal-delay-2">Architect of borderless digital infrastructure.</p>
+      <p class="hero-bio reveal reveal-delay-3">
+        Innovated the <strong>Autonomous Resource Management (AURE) Framework</strong> — a noncommercial ecosystem spanning <strong>70 global zones</strong>, leveraging the ARISE Protocol, Blockmachine OS, and Sovereign Resource Tokenization to advance digital equity at scale.
+      </p>
+      <div class="hero-ctas reveal reveal-delay-4">
+        <a href="https://autonomousresourcemanagement.com" class="btn-primary" target="_blank">
+          View AURE Docs ↗
+        </a>
+        <a href="#work" class="btn-ghost">Explore Work</a>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num">70<span>+</span></div>
+        <div class="stat-label">Global Deployment Zones</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-num">12<span>k</span></div>
+        <div class="stat-label">ARISE TPS Throughput</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-num">98<span>.4%</span></div>
+        <div class="stat-label">Edge Layer Uptime</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-num">28<span>%</span></div>
+        <div class="stat-label">Carbon Footprint Reduction</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-num">50<span>k</span></div>
+        <div class="stat-label">Autonomous Agents Deployed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="container">
+    <div class="section-label reveal">Projects</div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Infrastructure<br><em>at global scale</em>
+    </h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Three interconnected systems — each a layer in the broader mission of autonomous, equitable digital infrastructure.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- AURE -->
+      <div class="project-card reveal">
+        <div>
+          <div class="proj-meta">
+            <span class="proj-index">01</span>
+            <span class="proj-tag tag-aure">AURE Framework</span>
+          </div>
+          <h3 class="proj-name">Autonomous Resource<br>Management Ecosystem</h3>
+          <p class="proj-desc">
+            A noncommercial innovation framework spanning 70 global zones. Integrates the ARISE Protocol as a digital nervous system, Blockmachine OS for ethical kernel-level governance, and Sovereign Resource Tokenization (SRT) to convert idle municipal assets into non-speculative utility units.
+          </p>
+          <div class="proj-pills">
+            <span class="pill">ARISE Protocol</span>
+            <span class="pill">Blockmachine OS</span>
+            <span class="pill">SRT Engine</span>
+            <span class="pill">Mason Control Agent</span>
+            <span class="pill">Forensic Link Sync</span>
+          </div>
+        </div>
+        <a href="https://virtualmase.github.io/aureorg/" target="_blank" class="proj-arrow">↗</a>
+      </div>
+
+      <!-- ARCTURA -->
+      <div class="project-card reveal">
+        <div>
+          <div class="proj-meta">
+            <span class="proj-index">02</span>
+            <span class="proj-tag tag-arc">Arctura Subnet</span>
+          </div>
+          <h3 class="proj-name">High-Frequency Consensus<br>for Autonomous Agents</h3>
+          <p class="proj-desc">
+            A six-layer signal architecture powering enterprise-grade autonomous resource management. Features Resonance BFT consensus, mandate chain delegation, Wasm sandboxing, and carbon-aware scheduling — the only platform with native MCP, A2A, ACP, and AP2 protocol support.
+          </p>
+          <div class="proj-pills">
+            <span class="pill">Resonance BFT</span>
+            <span class="pill">Mandate Chains</span>
+            <span class="pill">Wasm Sandboxing</span>
+            <span class="pill">Carbon Scheduling</span>
+            <span class="pill">MCP · A2A · ACP · AP2</span>
+          </div>
+        </div>
+        <a href="https://autonomousresourcemanagement.com" target="_blank" class="proj-arrow">↗</a>
+      </div>
+
+      <!-- BLOCK MACHINE -->
+      <div class="project-card reveal">
+        <div>
+          <div class="proj-meta">
+            <span class="proj-index">03</span>
+            <span class="proj-tag tag-bm">Block Machine OC</span>
+          </div>
+          <h3 class="proj-name">Decentralized RPC &amp;<br>Archive Node Network</h3>
+          <p class="proj-desc">
+            Orange County's decentralized, incentivized RPC and archive node infrastructure built on Bittensor. Self-optimizing through economic incentives — the physical substrate that anchors the broader AURE vision in verifiable, censorship-resistant infrastructure.
+          </p>
+          <div class="proj-pills">
+            <span class="pill">Bittensor</span>
+            <span class="pill">Decentralized RPC</span>
+            <span class="pill">Archive Nodes</span>
+            <span class="pill">Web3 Infrastructure</span>
+            <span class="pill">OC, California</span>
+          </div>
+        </div>
+        <a href="https://blockmachineoc.com" target="_blank" class="proj-arrow">↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / FRAMEWORK -->
+<section id="philosophy">
+  <div class="container">
+    <div class="phil-grid">
+      <div class="phil-left">
+        <div class="section-label reveal">Design Philosophy</div>
+        <h2 class="section-title reveal reveal-delay-1">
+          Building toward<br><em>digital sovereignty</em>
+        </h2>
+        <p class="section-sub reveal reveal-delay-2" style="margin-bottom: 40px;">
+          Every system Mason builds is guided by a consistent set of constraints — noncommercial intent, forensic integrity, and the principle that infrastructure should serve communities, not extract from them.
+        </p>
+        <div class="phil-pillars reveal reveal-delay-3">
+          <div class="pillar">
+            <div class="pillar-num">01</div>
+            <div>
+              <div class="pillar-title">Noncommercial Intent</div>
+              <div class="pillar-text">Every layer of AURE is designed to facilitate rather than extract — tokenization serves utility, not speculation.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">02</div>
+            <div>
+              <div class="pillar-title">Forensic Integrity</div>
+              <div class="pillar-text">A persistent record across all dimensions of the municipality, enforced by Merkle-proofed Truth Ledgers and the Mason Control Agent.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">03</div>
+            <div>
+              <div class="pillar-title">Virtue-Locked Governance</div>
+              <div class="pillar-text">Blockmachine OS enforces 13 kernel-level virtues through quadratic voting and Byzantine Fault Tolerant consensus — governance by design, not policy.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">04</div>
+            <div>
+              <div class="pillar-title">Carbon-Aware Compute</div>
+              <div class="pillar-text">Workloads defer to low-carbon grid windows. The ecosystem targets net-negative carbon impact across all subnet operations.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="phil-right reveal reveal-delay-2">
+        <div class="metrics-panel">
+          <h3>System Performance · Live Sync</h3>
+          <div class="metric-row">
+            <div class="metric-name">L-3D Edge Uptime</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 98.4%;"></div></div>
+            <div class="metric-val">98.4%</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-name">L-5D Governance Compliance</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 95.2%;"></div></div>
+            <div class="metric-val">95.2%</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-name">ARISE Protocol TPS</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 100%; background: var(--signal);"></div></div>
+            <div class="metric-val">12k</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-name">Carbon Reduction (vs. baseline)</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 28%; background: var(--green);"></div></div>
+            <div class="metric-val">28%</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-name">Active Global Zones</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 70%; background: var(--amber);"></div></div>
+            <div class="metric-val">70</div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-name">Wasm Sandbox Escapes</div>
+            <div class="metric-bar-wrap"><div class="metric-bar" style="width: 0%;"></div></div>
+            <div class="metric-val">0</div>
+          </div>
+
+          <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line);">
+            <div style="font-family: var(--mono); font-size: 0.62rem; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px;">Layer Map</div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div style="display: flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 0.65rem;">
+                <span style="color: var(--arc); min-width: 28px;">L-3D</span>
+                <span style="color: var(--text-2);">Physical Edge · IoT Oracle v1</span>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 0.65rem;">
+                <span style="color: var(--arc); min-width: 28px;">L-5D</span>
+                <span style="color: var(--text-2);">Ethical Governance · Blockmachine OS</span>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center; font-family: var(--mono); font-size: 0.65rem;">
+                <span style="color: var(--arc); min-width: 28px;">L-8D</span>
+                <span style="color: var(--text-2);">Epistemic Intelligence · Mason Control Agent</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCTURA SIGNAL LAYERS -->
+<section id="layers">
+  <div class="container">
+    <div class="section-label reveal">Arctura Signal Stack</div>
+    <h2 class="section-title reveal reveal-delay-1">Six-layer <em>architecture</em></h2>
+    <p class="section-sub reveal reveal-delay-2">
+      Every autonomous action is attested through a cryptographically verifiable stack — from human intent to tool execution.
+    </p>
+
+    <div class="layers-stack">
+      <div class="layer-row reveal">
+        <div class="layer-id">L0</div>
+        <div class="layer-info">
+          <div class="layer-name">Human Intent</div>
+          <div class="layer-desc">DID identity · root mandates · HITL escalation</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">DID</span>
+          <span class="layer-chip">Mandate Root</span>
+        </div>
+      </div>
+      <div class="layer-row reveal reveal-delay-1">
+        <div class="layer-id">L1</div>
+        <div class="layer-info">
+          <div class="layer-name">Orchestration Kernel</div>
+          <div class="layer-desc">Durable workflows · task routing · circuit breakers</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">Temporal.io</span>
+          <span class="layer-chip">Circuit Breaker</span>
+        </div>
+      </div>
+      <div class="layer-row reveal reveal-delay-2">
+        <div class="layer-id">L2</div>
+        <div class="layer-info">
+          <div class="layer-name">Safety &amp; Sandbox</div>
+          <div class="layer-desc">Wasm sandboxing · Resonance BFT · hallucination detection</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">Wasmtime</span>
+          <span class="layer-chip">Resonance BFT</span>
+        </div>
+      </div>
+      <div class="layer-row reveal reveal-delay-3">
+        <div class="layer-id">L3</div>
+        <div class="layer-info">
+          <div class="layer-name">Semantic Signal</div>
+          <div class="layer-desc">JSON-LD · knowledge graphs · machine-readable state</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">JSON-LD</span>
+          <span class="layer-chip">schema.org</span>
+        </div>
+      </div>
+      <div class="layer-row reveal">
+        <div class="layer-id">L4</div>
+        <div class="layer-info">
+          <div class="layer-name">Memory &amp; Retrieval</div>
+          <div class="layer-desc">Vector store · event sourcing · checkpoint store</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">Vector DB</span>
+          <span class="layer-chip">Event Log</span>
+        </div>
+      </div>
+      <div class="layer-row reveal reveal-delay-1">
+        <div class="layer-id">L5</div>
+        <div class="layer-info">
+          <div class="layer-name">Tool &amp; Action</div>
+          <div class="layer-desc">MCP-native tool registry · context windows · resource providers</div>
+        </div>
+        <div class="layer-tech">
+          <span class="layer-chip">MCP</span>
+          <span class="layer-chip">A2A</span>
+          <span class="layer-chip">ACP</span>
+          <span class="layer-chip">AP2</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; padding: 24px; background: var(--void-2); border: 1px solid var(--line); border-radius: 4px;" class="reveal">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+        <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--signal);"></div>
+        <span style="font-family: var(--mono); font-size: 0.65rem; color: var(--signal); text-transform: uppercase; letter-spacing: 0.15em;">Resonance BFT · 3-Validator · Forward-Only Attestation</span>
+      </div>
+      <p style="font-size: 0.88rem; color: var(--text-2); line-height: 1.7; max-width: 640px;">
+        Resonance attests agent mandates rather than ordering transactions. Three validator nodes reach consensus on each action. The protocol adapts cycle frequency to network load, maintaining forward-only attestation with no re-orgs. All decisions are logged to the Truth Ledger with Merkle proofs.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="section-label reveal" style="justify-content: center;">Contact</div>
+      <h2 class="section-title reveal reveal-delay-1" style="text-align: center;">
+        Build the<br><em>open infrastructure</em>
+      </h2>
+      <p class="section-sub reveal reveal-delay-2" style="margin: 0 auto 16px; text-align: center;">
+        Mason is focused on expanding the AURE ecosystem and exploring collaborations at the intersection of decentralized infrastructure, digital equity, and autonomous systems.
+      </p>
+
+      <div class="contact-links reveal reveal-delay-3">
+        <a href="https://autonomousresourcemanagement.com" target="_blank" class="contact-link">
+          <div class="contact-link-dot dot-blue"></div>
+          Arctura Subnet
+        </a>
+        <a href="https://virtualmase.github.io/aureorg/" target="_blank" class="contact-link">
+          <div class="contact-link-dot dot-signal"></div>
+          AURE Framework
+        </a>
+        <a href="https://blockmachineoc.com" target="_blank" class="contact-link">
+          <div class="contact-link-dot dot-amber"></div>
+          Block Machine OC
+        </a>
+        <a href="mailto:signal@arctura.network" class="contact-link">
+          <div class="contact-link-dot dot-green"></div>
+          signal@arctura.network
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 Mason Nguyen · masonnguyengeo.com · Orange County, CA
+      </div>
+      <div class="footer-status">
+        <div class="status-dot"></div>
+        AURE Global Sync · Active
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => io.observe(el));
+
+  // Instantly show hero elements
+  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), i * 120);
+  });
+
+  // Animate metric bars on scroll
+  const metricBars = document.querySelectorAll('.metric-bar');
+  const barIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.width = e.target.style.width;
+        barIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  metricBars.forEach(b => {
+    const target = b.style.width;
+    b.style.width = '0%';
+    barIO.observe(b);
+    setTimeout(() => { b.style.width = target; }, 400);
+  });
+</script>
+</body>
+</html>
